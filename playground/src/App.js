@@ -1,7 +1,9 @@
-import React from 'react'
-import DragDrop from './DragDrop/DragDrop'
+import logo from './logo.svg';
+import './App.css';
+import { DragNDropContainer } from 'drag-n-drop-container';
 
-export default function App() {
+
+function App() {
   //Props Data Start
   const containersArray = [
     {
@@ -112,30 +114,32 @@ export default function App() {
     padding: '4%',
   }
   const renderContainerStyle = {
-    display: 'block', 
+    display: 'block',
     justifyContent: 'space-around'
   }
-  
+
   const onChange = (containArr, itemArr) => {
     console.log(
-      '*** You can see the updated containArr and item Arry when change the Drop event',
-      containArr,
-      itemArr
+        '*** You can see the updated containArr and item Arry when change the Drop event',
+        containArr,
+        itemArr
     )
   }
   //Props Data End
 
   return (
-    <div>
-      <DragDrop
-        containersArray={containersArray}
-        itemsArray={itemsArray}
-        renderCardStyle1={renderCardStyle1}
-        renderCardStyle2={renderCardStyle2}
-        renderContainerStyle={renderContainerStyle}
-        renderBlockWrapperStyle={renderBlockWrapperStyle}
-        onChange={onChange}
+    <div className="App">
+      <DragNDropContainer
+          containersArray={containersArray}
+          itemsArray={itemsArray}
+          renderCardStyle1={renderCardStyle1}
+          renderCardStyle2={renderCardStyle2}
+          renderContainerStyle={renderContainerStyle}
+          renderBlockWrapperStyle={renderBlockWrapperStyle}
+          onChange={onChange}
       />
     </div>
-  )
+  );
 }
+
+export default App;

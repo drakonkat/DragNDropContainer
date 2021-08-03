@@ -1,34 +1,40 @@
 {
-  "name": "drag-n-drop-container2",
-  "version": "1.0.7",
+  "name": "drag-n-drop-container",
+  "version": "1.0.12",
   "description": "The component proupose is to merge 2 list into one. Where the order count and every object of the first list, can contain zero or multiple element of the list 2.\nWith a friendly drag and drop UI.\nSo we have:\n- Two list of element\n- The first list can be ordered between the first list element\n- The second list must be associated to one element of the first list\n- If first list element contains multiple second list element. This can be ordered inside the first list element.\n- If i order the first list element this must memorize the second list element contained inside the first list element",
   "keywords": [],
-  "main": "src/DragDrop/DragDrop.js",
   "private": false,
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.js",
   "dependencies": {
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
     "react-scripts": "3.4.3",
     "react-sortablejs": "6.0.0",
     "sortablejs": "1.12.0",
     "styled-components": "5.2.0"
   },
+  "peerDependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
     "@babel/preset-react": "^7.14.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.55.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "typescript": "3.8.3"
   },
   "scripts": {
-    "publish:npm": "babel src/DragDrop -d dist --copy-files",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "rollup -c",
+    "build-watch": "rollup -c -w",
+    "start-playground": "cd playground && npm run start",
+    "i-all": "npm i && cd playground && npm i",
+    "dev": "npm-run-all --parallel build-watch start-playground"
   },
   "browserslist": [
     ">0.2%",
