@@ -1,9 +1,16 @@
 {
-  "name": "react-sortable-js-nested",
-  "version": "1.0.0",
-  "description": "",
+  "name": "drag-n-drop-container",
+  "version": "1.0.4",
+  "description": "The component proupose is to merge 2 list into one. Where the order count and every object of the first list, can contain zero or multiple element of the list 2.\nWith a friendly drag and drop UI.\nSo we have:\n- Two list of element\n- The first list can be ordered between the first list element\n- The second list must be associated to one element of the first list\n- If first list element contains multiple second list element. This can be ordered inside the first list element.\n- If i order the first list element this must memorize the second list element contained inside the first list element",
   "keywords": [],
-  "main": "src/index.js",
+  "main": "src/DragDrop/DragDrop.js",
+  "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ]
+  },
   "dependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -13,9 +20,13 @@
     "styled-components": "5.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@babel/preset-react": "^7.14.5",
     "typescript": "3.8.3"
   },
   "scripts": {
+    "publish:npm": "babel src/DragDrop -d dist --copy-files",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
