@@ -171,7 +171,7 @@ function BlockWrapper(_ref) {
   if (block.type === 'container') {
     return /*#__PURE__*/React__default['default'].createElement("div", {
       style: renderBlockWrapperStyle
-    }, "container: ", block.content, /*#__PURE__*/React__default['default'].createElement(Container, {
+    }, block.content, /*#__PURE__*/React__default['default'].createElement(Container, {
       renderBlockWrapperStyle: renderBlockWrapperStyle,
       block: block,
       onBlockWrapper: handleBlockWrapper,
@@ -181,7 +181,7 @@ function BlockWrapper(_ref) {
   } else {
     return /*#__PURE__*/React__default['default'].createElement("div", {
       style: renderBlockWrapperStyle
-    }, "text: ", block.content);
+    }, block.content);
   }
 }
 
@@ -243,44 +243,31 @@ function DragDrop(_ref) {
     });
   }))), /*#__PURE__*/React__default['default'].createElement("div", {
     style: renderCardStyle2
-  }, items && items.map(function (item, index) {
-    return /*#__PURE__*/React__default['default'].createElement(reactSortablejs.ReactSortable, _extends({
-      key: index,
-      style: renderContainerStyle,
-      group: {
-        name: 's',
-        pull: true,
-        put: true
-      },
-      sort: true,
-      onEnd: handleListEnd,
-      list: item.children,
-      setList: function setList(currentList) {
-        setItems(function (sourceList) {
-          var tempList = _toConsumableArray(sourceList);
-
-          var _blockIndex = [index];
-
-          var lastIndex = _blockIndex.pop();
-
-          var lastArr = _blockIndex.reduce(function (arr, i) {
-            return arr[i]['children'];
-          }, tempList);
-
-          lastArr[lastIndex]['children'] = currentList;
-          return tempList;
-        });
-      }
-    }, sortableOptions), item.children && item.id && item.children.length > 0 && item.children.map(function (childBlock, index) {
-      return /*#__PURE__*/React__default['default'].createElement(BlockWrapper, {
-        renderBlockWrapperStyle: renderBlockWrapperStyle,
-        key: index,
-        block: childBlock,
-        blockIndex: [index],
-        setBlocks: setItems
+  }, /*#__PURE__*/React__default['default'].createElement(reactSortablejs.ReactSortable, _extends({
+    key: "sortable-0",
+    style: renderContainerStyle,
+    group: {
+      name: 's',
+      pull: true,
+      put: true
+    },
+    sort: true,
+    onEnd: handleListEnd,
+    list: items,
+    setList: function setList(currentList) {
+      setItems(function () {
+        return currentList;
       });
-    }));
-  })));
+    }
+  }, sortableOptions), items && items.length > 0 && items.map(function (childBlock, index) {
+    return /*#__PURE__*/React__default['default'].createElement(BlockWrapper, {
+      renderBlockWrapperStyle: renderBlockWrapperStyle,
+      key: index,
+      block: childBlock,
+      blockIndex: [index],
+      setBlocks: setItems
+    });
+  }))));
 }
 
 exports.DragNDropContainer = DragDrop;

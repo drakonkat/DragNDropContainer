@@ -23,13 +23,7 @@ contain zero or multiple element of the list 2. With a friendly drag and drop UI
 
 ### Examples
 
-Below is a simple `List` example. Each row in the virtualized list is rendered through the use of a `rowRenderer`
-function for performance reasons. This function must return an element that has a unique `key`, applies the `style` and
-has content fitting within `rowHeight`.
-
-**Note** that it is very important that rows do not have vertical overflow. It would make scrolling the list difficult (
-as individual items will intercept the scroll events). For this reason it is recommended that your rows use a style
-like `overflow-y: hidden`.)
+Here is an example of the use of the component
 
 ```javascript
 import { DragNDropContainer } from 'drag-n-drop-container';
