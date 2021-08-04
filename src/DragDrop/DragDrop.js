@@ -33,6 +33,7 @@ export default function DragDrop({
                     list={blocks}
                     delay={2}
                     sort={true}
+                    onEnd={handleListEnd}
                     setList={setBlocks}
                     group={{
                         name: 's',
