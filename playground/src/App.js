@@ -101,6 +101,10 @@ function App() {
         height: "100%"
 
     }
+    const renderMainContainerStyle = {
+        display: 'flex',
+        justifyContent: 'space-between'
+    }
 
     const onChange = (containArr, itemArr) => {
         console.log(
@@ -119,6 +123,7 @@ function App() {
                 renderCardStyle1={renderCardStyle1}
                 renderCardStyle2={renderCardStyle2}
                 renderContainerStyle={renderContainerStyle}
+                renderMainContainerStyle={renderMainContainerStyle}
                 renderBlockWrapperStyle={renderBlockWrapperStyle}
                 renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                 onChange={onChange}

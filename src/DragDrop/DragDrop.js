@@ -14,6 +14,7 @@ export default function DragDrop({
                                      itemsArray,
                                      renderCardStyle1,
                                      renderCardStyle2,
+                                     renderMainContainerStyle,
                                      renderContainerStyle,
                                      renderBlockWrapperStyle,
                                      renderBlockWrapperStyle2,
@@ -26,7 +27,7 @@ export default function DragDrop({
         onChange(blocks, items)
     }
     return (
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div style={renderMainContainerStyle}>
             <div style={renderCardStyle1}>
                 <ReactSortable
                     style={renderContainerStyle}
