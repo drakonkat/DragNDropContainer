@@ -9,7 +9,7 @@ const sortableOptions = {
   ghostClass: 'ghost'
 }
 
-export default function Container({ block, blockIndex, setBlocks, renderBlockWrapperStyle, onBlockWrapper }) {
+export default function Container({ block, blockIndex, setBlocks, renderBlockWrapperStyle,renderBlockWrapperStyle2, onBlockWrapper }) {
   const handleBlockEnd = () => {
     onBlockWrapper()
   }
@@ -42,6 +42,7 @@ export default function Container({ block, blockIndex, setBlocks, renderBlockWra
           return (
             <BlockWrapper
               renderBlockWrapperStyle={renderBlockWrapperStyle}
+              renderBlockWrapperStyle2={renderBlockWrapperStyle2}
               key={index}
               block={childBlock}
               blockIndex={[index]}

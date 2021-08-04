@@ -82,12 +82,23 @@ function App() {
         marginBottom: '10px',
         border: '1px solid lightgray',
         borderRadius: '4px',
-        cursor: 'move'
+        cursor: 'move',
+        backgroundColor: "grey"
+    }
+    const renderBlockWrapperStyle2 = {
+        position: 'relative',
+        background: 'white',
+        padding: '20px',
+        marginBottom: '10px',
+        border: '1px solid lightgray',
+        borderRadius: '4px',
+        cursor: 'move',
+        backgroundColor: "yellow"
     }
 
     const renderCardStyle1 = {
         justifyContent: 'space-around',
-        backgroundColor: '#ebecf0',
+        backgroundColor: 'RED',
         borderRadius: '3px',
         boxSizing: 'border-box',
         display: 'flex',
@@ -97,9 +108,10 @@ function App() {
         whiteSpace: 'normal',
         width: '48%',
         padding: '3%',
+
     }
     const renderCardStyle2 = {
-        backgroundColor: '#ebecf0',
+        backgroundColor: 'GREEN',
         borderRadius: '3px',
         boxSizing: 'border-box',
         display: 'flex',
@@ -113,6 +125,8 @@ function App() {
     const renderContainerStyle = {
         display: 'block',
         justifyContent: 'space-around',
+        backgroundColor:"pink",
+        height: "100%"
 
     }
 
@@ -134,6 +148,7 @@ function App() {
                 renderCardStyle2={renderCardStyle2}
                 renderContainerStyle={renderContainerStyle}
                 renderBlockWrapperStyle={renderBlockWrapperStyle}
+                renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                 onChange={onChange}
             />
         </div>

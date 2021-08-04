@@ -16,6 +16,7 @@ export default function DragDrop({
                                      renderCardStyle2,
                                      renderContainerStyle,
                                      renderBlockWrapperStyle,
+                                     renderBlockWrapperStyle2,
                                      onChange
                                  }) {
     const [blocks, setBlocks] = useState(containersArray)
@@ -43,6 +44,7 @@ export default function DragDrop({
                         return (
                             <BlockWrapper
                                 renderBlockWrapperStyle={renderBlockWrapperStyle}
+                                renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                                 key={block.id}
                                 block={block}
                                 onBlockEnd={handleListEnd}
@@ -77,6 +79,7 @@ export default function DragDrop({
                         return (
                             <BlockWrapper
                                 renderBlockWrapperStyle={renderBlockWrapperStyle}
+                                renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                                 key={index}
                                 block={childBlock}
                                 blockIndex={[index]}
