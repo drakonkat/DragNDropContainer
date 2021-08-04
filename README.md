@@ -26,7 +26,7 @@ contain zero or multiple element of the list 2. With a friendly drag and drop UI
 Here is an example of the use of the component
 
 ```javascript
-import { DragNDropContainer } from 'drag-n-drop-container';
+import {DragNDropContainer} from 'drag-n-drop-container';
 
 
 function App() {
@@ -38,8 +38,7 @@ function App() {
             type: 'container',
             children: [
                 {
-                    content: 'item 1',
-                    width: 2
+                    content: 'item 1'
                 }
             ]
         },
@@ -49,8 +48,7 @@ function App() {
             type: 'container',
             children: [
                 {
-                    content: 'item 2',
-                    width: 2
+                    content: 'item 2'
                 }
             ]
         },
@@ -60,50 +58,23 @@ function App() {
             type: 'container',
             children: [
                 {
-                    content: 'item 3',
-                    width: 2
+                    content: 'item 3'
                 }
             ]
         }
     ]
+
     const itemsArray = [
         {
-            id: 1,
-            type: 'Item',
-            children: [
-                {
-                    id: 4,
-                    content: 'item 4',
-                    width: 2,
-                    type: 'text'
-                },
-                {
-                    id: 5,
-                    content: 'item 5',
-                    width: 2,
-                    type: 'text'
-                }
-            ]
+            id: 4,
+            content: 'item 4'
         },
         {
-            id: 2,
-            type: 'Item',
-            children: [
-                {
-                    id: 6,
-                    content: 'item 6',
-                    width: 2,
-                    type: 'text'
-                },
-                {
-                    id:7,
-                    content: 'item 7',
-                    width: 2,
-                    type: 'text'
-                }
-            ]
+            id: 5,
+            content: 'item 5'
         }
     ]
+
     const renderBlockWrapperStyle = {
         position: 'relative',
         background: 'white',
@@ -137,11 +108,12 @@ function App() {
         position: 'relative',
         whiteSpace: 'normal',
         width: '48%',
-        padding: '4%',
+        padding: '4%'
     }
     const renderContainerStyle = {
         display: 'block',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+
     }
 
     const onChange = (containArr, itemArr) => {

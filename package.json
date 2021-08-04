@@ -1,6 +1,6 @@
 {
   "name": "drag-n-drop-container",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "The component proupose is to merge 2 list into one. Where the order count and every object of the first list, can contain zero or multiple element of the list 2.\nWith a friendly drag and drop UI.\nSo we have:\n- Two list of element\n- The first list can be ordered between the first list element\n- The second list must be associated to one element of the first list\n- If first list element contains multiple second list element. This can be ordered inside the first list element.\n- If i order the first list element this must memorize the second list element contained inside the first list element",
   "keywords": [],
   "private": false,
