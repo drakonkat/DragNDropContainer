@@ -118,6 +118,7 @@ function App() {
     return (
         <div className="App">
             <DragNDropContainer
+                disabledDnD={true}
                 containersArray={containersArray}
                 itemsArray={itemsArray}
                 renderCardStyle1={renderCardStyle1}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from './Container'
 
-export default function BlockWrapper({block, blockIndex, setBlocks, renderBlockWrapperStyle,renderBlockWrapperStyle2, onBlockEnd}) {
+export default function BlockWrapper({disabledDnD,block, blockIndex, setBlocks, renderBlockWrapperStyle,renderBlockWrapperStyle2, onBlockEnd}) {
     const handleBlockWrapper = () => {
         onBlockEnd()
     }
@@ -11,6 +11,7 @@ export default function BlockWrapper({block, blockIndex, setBlocks, renderBlockW
             <div style={renderBlockWrapperStyle}>
                 {block.content}
                 <Container
+                    disabledDnD={disabledDnD}
                     renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                     block={block}
                     onBlockWrapper={handleBlockWrapper}

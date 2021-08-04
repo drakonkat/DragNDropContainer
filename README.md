@@ -13,13 +13,15 @@ contain zero or multiple element of the list 2. With a friendly drag and drop UI
 
 | Property          | Type               | Required? | Description                                                                                                                                                                                                                                                                                               |
 | :---------------- | :----------------- | :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| containersArray   | Array              |           | |
-| itemsArray         | Array             |           | |
+| containersArray   | Array              |           |Data to place in the first list. That can contains 'childern' element of the second list |
+| itemsArray         | Array             |           |Data to place in the second list, it can be placed in the first list container |
 | renderBlockWrapperStyle         | Style             |           | |
 | renderCardStyle1         | Style             |           | |
 | renderCardStyle2         | Style             |           | |
 | renderContainerStyle         | Style             |           | |
-| onChange         | function             |           | |
+| onChange         | function             |           |Event fired at every change of the element in the list |
+| disabledDnD         | boolean             |false           |Props to disable drag and drop function on all the component |
+| renderMainContainerStyle         | style             |true           |Main style of the container of all the component |
 
 ### Examples
 
@@ -146,6 +148,7 @@ function App() {
     return (
         <div className="App">
             <DragNDropContainer
+                disabledDnD={true}
                 containersArray={containersArray}
                 itemsArray={itemsArray}
                 renderCardStyle1={renderCardStyle1}
@@ -161,5 +164,4 @@ function App() {
 }
 
 export default App;
-
 ```

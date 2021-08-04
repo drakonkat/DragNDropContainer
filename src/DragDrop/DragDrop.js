@@ -10,6 +10,7 @@ const sortableOptions = {
 }
 
 export default function DragDrop({
+                                     disabledDnD,
                                      containersArray,
                                      itemsArray,
                                      renderCardStyle1,
@@ -23,8 +24,12 @@ export default function DragDrop({
     const [blocks, setBlocks] = useState(containersArray)
     const [items, setItems] = useState(itemsArray)
 
-    const handleListEnd = () => {
+    let handleListEnd = () => {
         onChange(blocks, items)
+    }
+    if(disabledDnD){
+        handleListEnd = () => {
+        }
     }
     return (
         <div style={renderMainContainerStyle}>
@@ -33,7 +38,7 @@ export default function DragDrop({
                     style={renderContainerStyle}
                     list={blocks}
                     delay={2}
-                    sort={true}
+                    sort={!disabledDnD}
                     onEnd={handleListEnd}
                     setList={setBlocks}
                     group={{
@@ -48,6 +53,7 @@ export default function DragDrop({
                                 renderBlockWrapperStyle={renderBlockWrapperStyle}
                                 renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                                 key={block.id}
+                                disabledDnD={disabledDnD}
                                 block={block}
                                 onBlockEnd={handleListEnd}
                                 blockIndex={[index]}
@@ -63,10 +69,10 @@ export default function DragDrop({
                     style={renderContainerStyle}
                     group={{
                         name: 's',
-                        pull: true,
-                        put: true
+                        pull: !disabledDnD,
+                        put: !disabledDnD
                     }}
-                    sort={true}
+                    sort={!disabledDnD}
                     onEnd={handleListEnd}
                     list={items}
                     setList={(currentList) => {
