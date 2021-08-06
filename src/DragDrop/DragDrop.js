@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {ReactSortable} from 'react-sortablejs'
 import BlockWrapper from './BlockWrapper'
 
@@ -19,7 +19,8 @@ export default function DragDrop({
                                      renderContainerStyle,
                                      renderBlockWrapperStyle,
                                      renderBlockWrapperStyle2,
-                                     onChange
+                                     onChange,
+                                     watchProps
                                  }) {
     const [blocks, setBlocks] = useState(containersArray)
     const [items, setItems] = useState(itemsArray)
@@ -27,10 +28,20 @@ export default function DragDrop({
     let handleListEnd = () => {
         onChange(blocks, items)
     }
-    if(disabledDnD){
+    if (disabledDnD) {
         handleListEnd = () => {
         }
     }
+
+    if (watchProps) {
+        useEffect(() => {
+            setItems(itemsArray)
+        }, [itemsArray])
+        useEffect(() => {
+            setBlocks(containersArray)
+        }, [containersArray])
+    }
+
     return (
         <div style={renderMainContainerStyle}>
             <div style={renderCardStyle1}>

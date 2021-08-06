@@ -36,7 +36,7 @@ function App() {
         }
     ]
 
-    const itemsArray = [
+    let itemsArray = [
         {
             id: 4,
             content: 'item 4'
@@ -44,6 +44,10 @@ function App() {
         {
             id: 5,
             content: 'item 5'
+        },
+        {
+            id: 7,
+            content: 'item 7'
         }
     ]
 
@@ -97,7 +101,7 @@ function App() {
     const renderContainerStyle = {
         display: 'block',
         justifyContent: 'space-around',
-        backgroundColor:"pink",
+        backgroundColor: "pink",
         height: "100%"
 
     }
@@ -128,6 +132,7 @@ function App() {
                 renderBlockWrapperStyle={renderBlockWrapperStyle}
                 renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                 onChange={onChange}
+                watchProps={true}
             />
         </div>
     );

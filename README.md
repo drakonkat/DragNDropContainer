@@ -22,6 +22,7 @@ contain zero or multiple element of the list 2. With a friendly drag and drop UI
 | onChange         | function             |           |Event fired at every change of the element in the list |
 | disabledDnD         | boolean             |false           |Props to disable drag and drop function on all the component |
 | renderMainContainerStyle         | style             |true           |Main style of the container of all the component |
+| watchProps         | style             |false           |Is set to true. The component will rerender if containerArray props or itemsArray props will change |
 
 ### Examples
 
