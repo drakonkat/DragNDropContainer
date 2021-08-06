@@ -22,7 +22,7 @@ contain zero or multiple element of the list 2. With a friendly drag and drop UI
 | onChange         | function             |           |Event fired at every change of the element in the list |
 | disabledDnD         | boolean             |false           |Props to disable drag and drop function on all the component |
 | renderMainContainerStyle         | style             |true           |Main style of the container of all the component |
-| watchProps         | style             |false           |Is set to true. The component will rerender if containerArray props or itemsArray props will change |
+| watchProps         | boolean             |false           |Is set to true. The component will rerender if containerArray props or itemsArray props will change |
 
 ### Examples
 
@@ -67,7 +67,7 @@ function App() {
         }
     ]
 
-    const itemsArray = [
+    let itemsArray = [
         {
             id: 4,
             content: 'item 4'
@@ -75,6 +75,10 @@ function App() {
         {
             id: 5,
             content: 'item 5'
+        },
+        {
+            id: 7,
+            content: 'item 7'
         }
     ]
 
@@ -128,7 +132,7 @@ function App() {
     const renderContainerStyle = {
         display: 'block',
         justifyContent: 'space-around',
-        backgroundColor:"pink",
+        backgroundColor: "pink",
         height: "100%"
 
     }
@@ -159,6 +163,7 @@ function App() {
                 renderBlockWrapperStyle={renderBlockWrapperStyle}
                 renderBlockWrapperStyle2={renderBlockWrapperStyle2}
                 onChange={onChange}
+                watchProps={true}
             />
         </div>
     );
